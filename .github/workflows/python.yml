@@ -1,0 +1,18 @@
+name: Run Hello-world from py script
+on: push
+
+jobs: 
+    Hello:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Clne Repo
+          uses: actions/checkout@v3
+        
+        - name: Setup Python
+          uses: actions/setup-python@v4
+          with: 
+            python-version: '3.10'
+        
+        - name: Run a py script
+          run: python hello.py
